@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!-- best-of-both: canonical page 1 + v2 evidence-map page 2, no .sheet wrapper hacks -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Readiness Profile — Oishee (Dora) Hossain</title>
+    <style>
+        /* match PSYC3011 revision-sheet house style (L02/L03/L04/T02/T03) */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @page { size: A4 portrait; margin: 4mm; }
+        @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 5pt;
+            line-height: 1.15;
+            color: #000;
+            background: #fff;
+            padding: 2mm;
+        }
+
+        .page-break { page-break-after: always; margin-bottom: 4mm; }
+
+        .header {
+            text-align: center;
+            border-bottom: 1.5pt solid #000;
+            padding-bottom: 1px;
+            margin-bottom: 2px;
+        }
+        .header h1 { font-size: 7.5pt; margin: 0; letter-spacing: 0.3px; }
+        .header .subtitle { font-size: 4pt; color: #333; }
+
+        .page-label {
+            text-align: right;
+            font-size: 4pt;
+            color: #999;
+            margin-bottom: 1px;
+        }
+
+        .container { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .full-width { grid-column: 1 / -1; }
+
+        .section {
+            border: 0.5pt solid #000;
+            padding: 1.5px;
+            break-inside: avoid;
+            margin-bottom: 1px;
+        }
+
+        .section-title {
+            font-size: 5.5pt;
+            font-weight: bold;
+            background: #000;
+            color: #fff;
+            padding: 0.5px 2px;
+            margin: -1.5px -1.5px 1px -1.5px;
+            letter-spacing: 0.2px;
+        }
+        .section-title.blue { background: #2563eb; }
+        .section-title.green { background: #16a34a; }
+        .section-title.orange { background: #ea580c; }
+        .section-title.red { background: #dc2626; }
+        .section-title.purple { background: #7c3aed; }
+        .section-title.teal { background: #0d9488; }
+        .section-title.amber { background: #d97706; }
+        .section-title.indigo { background: #4f46e5; }
+        .section-title.rose { background: #e11d48; }
+        .section-title.slate { background: #475569; }
+
+        table { width: 100%; border-collapse: collapse; font-size: 4.5pt; margin: 1px 0; }
+        th, td { border: 0.5pt solid #000; padding: 0.5px 1px; text-align: left; vertical-align: top; }
+        th { background: #e5e5e5; font-weight: bold; }
+        .center { text-align: center; }
+
+        .formula {
+            font-family: 'Times New Roman', serif;
+            font-size: 5.5pt;
+            text-align: center;
+            padding: 1px;
+            background: #f5f0ff;
+            border: 0.5pt solid #7c3aed;
+            margin: 1px 0;
+        }
+
+        .box { padding: 1px 2px; margin: 1px 0; font-size: 4.5pt; }
+        .box.purple { background: #f5f0ff; border-left: 1.5pt solid #7c3aed; }
+        .box.orange { background: #fff7ed; border-left: 1.5pt solid #ea580c; }
+        .box.green { background: #f0fdf4; border-left: 1.5pt solid #16a34a; }
+        .box.blue { background: #eff6ff; border-left: 1.5pt solid #2563eb; }
+        .box.red { background: #fef2f2; border-left: 1.5pt solid #dc2626; }
+        .box.teal { background: #f0fdfa; border-left: 1.5pt solid #0d9488; }
+        .box.amber { background: #fef3c7; border-left: 1.5pt solid #d97706; }
+        .box.indigo { background: #eef2ff; border-left: 1.5pt solid #4f46e5; }
+        .box.rose { background: #fff1f2; border-left: 1.5pt solid #e11d48; }
+        .box.slate { background: #f8fafc; border-left: 1.5pt solid #475569; }
+
+        ul, ol { margin-left: 6px; font-size: 4.5pt; }
+        li { margin-bottom: 0.5px; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; }
+        .mini { font-weight: bold; font-size: 5pt; margin: 1px 0 0.5px 0; color: #333; }
+
+        .exam-tip {
+            background: #fef3c7;
+            border: 0.5pt solid #f59e0b;
+            padding: 1px 2px;
+            margin: 1px 0;
+            font-size: 4pt;
+        }
+        .exam-tip::before { content: "\26A0 "; font-weight: bold; }
+
+        .mnemonic {
+            background: #dbeafe;
+            border: 0.5pt solid #3b82f6;
+            padding: 1px 2px;
+            margin: 1px 0;
+            font-size: 4pt;
+        }
+        .mnemonic::before { content: "\1F4A1 "; }
+
+        .svg-container { text-align: center; margin: 2px 0; }
+        svg { max-width: 100%; height: auto; }
+
+        .tiny { font-size: 4pt; color: #555; }
+
+        /* download pills (kept visually quiet) */
+        .pdf-link {
+            color: #000;
+            text-decoration: none;
+            border: 0.5pt solid #000;
+            padding: 0px 1.5px;
+            border-radius: 1.5px;
+            background: #f3f4f6;
+            font-size: 4pt;
+            display: inline-block;
+            line-height: 1.0;
+        }
+        .pdf-link:hover { background: #e5e7eb; }
+    </style>
+</head>
+<body>
+
+<!-- ================= PAGE 1 (canonical) ================= -->
+<div class="header">
+    <h1>RESEARCH READINESS PROFILE — OISHEE (“DORA”) HOSSAIN</h1>
+    <div class="subtitle">Psychology &amp; Neuroscience | Honours-directed | Supervisor-facing (public-safe)</div>
+</div>
+
+<div class="section full-width">
+    <div class="section-title" style="background:#1e293b;color:#fff;text-align:center;">SPINE</div>
+    <div class="box indigo" style="font-size:4.8pt;">
+        <b>mind + brain + behaviour → defensible evidence</b><br>
+        three stable obsessions across the work: <b>(a) conditionality</b> (when/for whom), <b>(b) validity</b> (measure → claim), <b>(c) translation</b> (usable principles without overclaiming).
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="column">
+
+        <div class="section">
+            <div class="section-title blue">Research identity (fast read)</div>
+            <div class="box blue" style="font-size:4.5pt;">
+                The through-line in my work is not a set of separate topics, but repeated attempts to answer one bigger question:
+                <b>how do we build tools, interventions, or explanations about minds without being fooled by simplistic claims?</b>
+                I focus on boundary conditions (when effects hold, and for whom), measurement validity/sensitivity (what the method can truly detect), and proportionate interpretation.
+            </div>
+            <div class="box purple" style="font-size:4.5pt;">
+                <b>psych × ai bridge (non-cosplay version):</b> modelling behaviour responsibly when systems are noisy, individual differences matter, and proxies can create false confidence.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title green">Recurring themes (what reappears)</div>
+            <ul>
+                <li><b>People are not interchangeable:</b> moderation, interaction effects, targeting principles</li>
+                <li><b>The measure shapes the conclusion:</b> validity, confounds, sensitivity, construct/proxy separation</li>
+                <li><b>Translation under constraints:</b> what can be built/used honestly in messy settings</li>
+                <li><b>Levels of explanation:</b> what kinds of claims are logically legitimate (conceptual hygiene)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-title teal">Core research capabilities (grounded)</div>
+            <table>
+                <tr><th>Capability</th><th>How it shows up</th></tr>
+                <tr><td><b>Interaction / moderation logic</b></td><td>Design + interpretation built around “for whom / when,” not universal effects</td></tr>
+                <tr><td><b>Factorial experimental thinking</b></td><td>Mechanism → variables → interpretable outcomes (multi-factor designs)</td></tr>
+                <tr><td><b>Validity-first inference</b></td><td>Measurement sensitivity/confounds treated as part of the claim</td></tr>
+                <tr><td><b>Method-based synthesis</b></td><td>Contradictory literatures explained via operationalisation + design weaknesses</td></tr>
+                <tr><td><b>Proportionate scientific writing</b></td><td>Clear claims + bounded conclusions + explicit “what would resolve this?”</td></tr>
+            </table>
+            <div class="exam-tip">This is intentionally <b>curated</b> (not a transcript archive). Evidence map on page 2; downloads at bottom.</div>
+        </div>
+
+    </div>
+
+    <div class="column">
+
+        <div class="section">
+            <div class="section-title purple">Signature projects (anchors, not a list)</div>
+
+            <p class="mini">1) testing when design interventions help vs harm</p>
+            <div class="box purple" style="font-size:4.5pt;">
+                <b>Method:</b> 2×2×2 factorial (working memory capacity × prompts × layout) on “seductive details”.<br>
+                <b>Insight:</b> the claim is conditional: learner–design alignment, not universal best practice.
+            </div>
+
+            <p class="mini">2) measurement validity as the explanation for “contradictory” findings</p>
+            <div class="box teal" style="font-size:4.5pt;">
+                <b>Method:</b> sleep consolidation + recognition sensitivity work designed around confounds (delay, learning time, list properties).<br>
+                <b>Insight:</b> literature conflict can reflect weak/insensitive methods; measure ↔ inference must be explicit.
+            </div>
+
+            <p class="mini">3) the testing effect as boundary conditions + mechanism</p>
+            <div class="box orange" style="font-size:4.5pt;">
+                <b>Method:</b> processing–retrieval alignment reasoning across material structure + retrieval format.<br>
+                <b>Insight:</b> educationally useful effects depend on what is being learned and how it must be retrieved.
+            </div>
+
+            <p class="mini">4) applied intervention evaluation under real constraints</p>
+            <div class="box red" style="font-size:4.5pt;">
+                <b>Method:</b> behavioural/CBT‑I style materials analysed with attrition + validity thresholds (minimum diary entries).<br>
+                <b>Insight:</b> transparency about missingness and adherence is part of evidence quality (no false confidence).
+            </div>
+
+            <p class="mini">5) conceptual precision (levels-of-explanation)</p>
+            <div class="box slate" style="font-size:4.5pt;">
+                <b>Method:</b> mereological fallacy analysis (what claims are logically justified in neuro/psych language).<br>
+                <b>Insight:</b> conceptual hygiene prevents overclaiming; it tightens hypotheses and interpretation.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title amber">Honours direction / fit (calm positioning)</div>
+            <div class="box amber" style="font-size:4.5pt;">
+                Best fit: projects/labs that value <b>experimental design</b>, <b>interaction/moderation reasoning</b>, and <b>measurement validity</b>, especially in cognition/learning,
+                behavioural/cognitive neuroscience, and clinically meaningful behavioural outcomes.
+            </div>
+            <table>
+                <tr><th>What this profile should make legible</th><th>So a supervisor can infer…</th></tr>
+                <tr><td>Conditional effects + boundary conditions</td><td>I will not overgeneralise; I will look for moderators and design constraints</td></tr>
+                <tr><td>Validity-first reasoning</td><td>I will protect inference quality (constructs, measures, confounds)</td></tr>
+                <tr><td>Translation without flattening</td><td>I can produce usable principles while staying honest about limitations</td></tr>
+            </table>
+            <div class="mnemonic">one-line identity: <b>adaptation, measurement, careful inference</b> — bridging human complexity and defensible models/systems.</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="page-label">Research Readiness Profile | Page 1 of 2 | Last updated: 2026-03-28</div>
+
+<div class="page-break"></div>
+
+<!-- ================= PAGE 2 (evidence map) ================= -->
+<div class="page-label">Research Readiness Profile | Page 2 of 2 | Evidence map (selected papers / writing samples)</div>
+
+<div class="section full-width">
+    <div class="section-title" style="background:#1e293b;color:#fff;text-align:center;">EVIDENCE MAP (KEY PAPERS → WHAT THEY TRAINED)</div>
+    <div class="box indigo" style="font-size:4.7pt;">
+        goal: touch the breadth without recreating an archive. each line is <b>problem → method signal → what it reveals (conditionality / validity / translation / levels)</b>.
+        samples can be shared in public-safe form; assessed submissions available privately on request where appropriate.
+    </div>
+
+    <table>
+        <tr>
+            <th style="width:24%;">paper / project (problem-first title)</th>
+            <th style="width:22%;">method signal</th>
+            <th style="width:36%;">methodological contribution (what it trained)</th>
+            <th style="width:14%;">tag</th>
+            <th style="width:4%;" class="center">pdf</th>
+        </tr>
+
+        <tr>
+            <td><b>when ‘better’ learning design helps or harms</b><br/><span class="tiny">(seductive details × WMC × prompts × layout)</span></td>
+            <td>2×2×2 factorial; interaction reasoning</td>
+            <td>boundary conditions + learner–design alignment; rejects universal prescriptions</td>
+            <td class="center">conditionality</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc2016_seductive-details_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>retrieval practice depends on processing fit</b><br/><span class="tiny">(testing effect; acquisition–retrieval match)</span></td>
+            <td>mechanism-first comparison across materials/formats</td>
+            <td>turns “testing helps” into a conditional, educationally usable principle</td>
+            <td class="center">conditionality / translation</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc1002_testing-effect_processing-match_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>presentation effects depend on environment + interference</b><br/><span class="tiny">(redundancy effects: online vs classroom)</span></td>
+            <td>interaction logic; transfer outcomes</td>
+            <td>context-dependent cognition; challenges one-size-fits-all multimedia advice</td>
+            <td class="center">conditionality</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc1001_redundancy-online-vs-classroom_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>targeting interventions: effects depend on starting state</b><br/><span class="tiny">(vicarious contact × ideology moderation)</span></td>
+            <td>moderation / baseline-dependent effects</td>
+            <td>intervention targeting principle (where you expect movement, and why)</td>
+            <td class="center">conditionality</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc2017_vicarious-contact_moderation_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>why literatures conflict when methods are weak</b><br/><span class="tiny">(sleep consolidation; recognition sensitivity; list properties)</span></td>
+            <td>confounds + sensitivity; measure critique</td>
+            <td>measure → inference discipline; contradictory findings as a validity problem</td>
+            <td class="center">validity</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc3014_sleep-consolidation_measurement-validity_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>applied behavioural sleep intervention under constraints</b><br/><span class="tiny">(self-administered CBT‑I style materials)</span></td>
+            <td>attrition; adherence thresholds; pragmatic inference</td>
+            <td>translation + realism: what can be claimed when data quality is uneven</td>
+            <td class="center">translation / validity</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc2015_cbti_intervention_results-discussion.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>levels-of-explanation: what kinds of claims are legitimate?</b><br/><span class="tiny">(mereological fallacy essay)</span></td>
+            <td>conceptual analysis; claim discipline</td>
+            <td>prevents category mistakes; sharpens hypotheses + interpretation</td>
+            <td class="center">levels</td>
+            <td class="center"><a class="pdf-link" href="papers/hpsc3023_mereological-fallacy_essay.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>poverty as deprivation vs threat (dual pathways)</b><br/><span class="tiny">(developmental/public-health framing)</span></td>
+            <td>mechanistic synthesis; counterfactual policy logic</td>
+            <td>translation from mechanism → clinically meaningful implications without flattening</td>
+            <td class="center">translation</td>
+            <td class="center"><a class="pdf-link" href="papers/psyc3016_poverty_dual-pathways_essay.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>physiology reporting with individual-differences realism</b><br/><span class="tiny">(exercise × heart-rate regulation)</span></td>
+            <td>within-subject measurement + group comparison</td>
+            <td>treats variability as explanatory (not noise); disciplined reporting</td>
+            <td class="center">validity / translation</td>
+            <td class="center"><a class="pdf-link" href="papers/phsi2007_exercise-heart-rate_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>evidence evaluation in pharmacology simulation</b><br/><span class="tiny">(dose–response; comparison to morphine)</span></td>
+            <td>ANOVA-style comparison; clear descriptive tables</td>
+            <td>controlled inference; comparison logic; proportionate conclusions</td>
+            <td class="center">validity</td>
+            <td class="center"><a class="pdf-link" href="papers/pcol_animal-simulation_analgesics_report.pdf" download>pdf</a></td>
+        </tr>
+
+        <tr>
+            <td><b>turning uncertainty into structured experiments</b><br/><span class="tiny">(multimedia learning portfolio)</span></td>
+            <td>behaviour-change systems thinking</td>
+            <td>translation: usable systems that survive messy days (without self-mythology)</td>
+            <td class="center">translation</td>
+            <td class="center">—</td>
+        </tr>
+
+    </table>
+
+    <div class="exam-tip">public-safe default: no inline marks/grades. if you want a single credibility signal (e.g., dean’s list / distinction average), add one compact line under the header.</div>
+</div>
+
+<div class="page-label">Research Readiness Profile | Page 2 of 2 | Last updated: 2026-03-28</div>
+
+</body>
+</html>
